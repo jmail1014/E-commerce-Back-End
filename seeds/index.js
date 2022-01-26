@@ -1,7 +1,7 @@
 const seedCategories = require('./category-seeds');
-const seedProducts = require('../../../uncc-virt-bo-fsf-pt-10-2021-u-b/13-ORM/02-Challenge/Develop/seeds/product-seeds');
-const seedTags = require('../../../uncc-virt-bo-fsf-pt-10-2021-u-b/13-ORM/02-Challenge/Develop/seeds/tag-seeds');
-const seedProductTags = require('../../../uncc-virt-bo-fsf-pt-10-2021-u-b/13-ORM/02-Challenge/Develop/seeds/product-tag-seeds');
+const seedProducts = require('./product-seeds');
+const seedTags = require('./tag-seeds');
+const seedProductTags = require('./product-tag-seeds');
 
 const sequelize = require('../config/connection');
 

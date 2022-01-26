@@ -1,4 +1,4 @@
-const { Category } = require('../../../uncc-virt-bo-fsf-pt-10-2021-u-b/13-ORM/02-Challenge/Develop/models');
+const { Category } = require('../models');
 
 const categoryData = [
   {
