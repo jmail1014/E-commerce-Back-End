@@ -1,16 +1,27 @@
 // import models
 const Product = require('./Product');
-const Category = require('../../../../../challenges/E-commerce-Back-End/models/Category');
+const Category = require('./Category');
 const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
 
 // Products belongsTo Category
+Product.belongsTo(Category, {
+  foreignKey: 'id',
+});
 
 // Categories have many Products
+Category.hasMany(Product, {
+  foreignKey: 'id',
+});
 
 // Products belongToMany Tags (through ProductTag)
-
+Product.belongsToMany(ProductTag, {
+  foreignKey: 'tag_id',
+});
 // Tags belongToMany Products (through ProductTag)
+Tag.belongsToMany(ProductTag, {
+  foreignKey: 'product_id',
+});
 
 module.exports = {
   Product,
