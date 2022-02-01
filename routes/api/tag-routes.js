@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { regexp } = require("sequelize/types/lib/operators");
+// const { regexp } = require("sequelize/types/lib/operators");
 const { Tag, Product, ProductTag } = require("../../models");
 
 // The `/api/tags` endpoint
@@ -43,7 +43,6 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   // create a new tag
-  if (req.session) {
     Tag.create({
       tag_name: req.body.tag_name,
     })
@@ -52,8 +51,7 @@ router.post("/", (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  }
-});
+  });
 
 router.put("/:id", (req, res) => {
   // update a tag's name by its `id` value

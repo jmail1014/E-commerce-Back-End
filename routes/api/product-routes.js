@@ -9,21 +9,18 @@ router.get("/", (req, res) => {
   // be sure to include its associated Category and Tag data
   Product.findAll({
     include: [
-      {
-        model: Category,
-        attributes: ["id", "category_name"],
-      },
+      Category,
       {
         model: Tag,
-        attributes: ["id", "tag_name"],
+        through: ProductTag,
       },
-    ]
-      .then((dbProductData) => res.json(dbProductData))
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      }),
-  });
+    ],
+  })
+    .then((dbProductData) => res.json(dbProductData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // get one product
@@ -102,7 +99,7 @@ router.put("/:id", (req, res) => {
       id: req.params.id,
     },
   })
-    .then((product) => {
+    .then((ProductTag) => {
       // find all associated tags from ProductTag
       return ProductTag.findAll({ where: { product_id: req.params.id } });
     })
