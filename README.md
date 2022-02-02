@@ -16,3 +16,5 @@ This is the back end for an e-commerce site. It was built by taking a functional
 [GitHub repository](https://github.com/jmail1014/E-commerce-Back-End)
 
 ## Walk through video demonstrating the functionality
+
+(https://watch.screencastify.com/v/vXaO0YkfbjCLlDXxgz90)
